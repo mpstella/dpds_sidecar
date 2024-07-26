@@ -1,0 +1,32 @@
+{
+    "name": "Marketing Campaigns",
+    "description": "Data on various marketing campaigns run by the company.",
+    "columns": [
+      {
+        "name": "campaign_id",
+        "type": "integer",
+        "description": "Unique identifier for each campaign"
+      },
+      {
+        "name": "campaign_name",
+        "type": "string",
+        "description": "Name of the campaign"
+      },
+      {
+        "name": "start_date",
+        "type": "date",
+        "description": "Start date of the campaign"
+      },
+      {
+        "name": "end_date",
+        "type": "date",
+        "description": "End date of the campaign"
+      },
+      {
+        "name": "budget",
+        "type": "decimal",
+        "description": "Budget allocated for the campaign"
+      }
+    ]
+  }
+  

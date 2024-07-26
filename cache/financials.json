@@ -1,0 +1,32 @@
+{
+    "name": "Financial Statements",
+    "description": "Quarterly financial statements of the company.",
+    "columns": [
+      {
+        "name": "statement_id",
+        "type": "integer",
+        "description": "Unique identifier for each financial statement"
+      },
+      {
+        "name": "quarter",
+        "type": "string",
+        "description": "Financial quarter (e.g., Q1, Q2)"
+      },
+      {
+        "name": "year",
+        "type": "integer",
+        "description": "Financial year"
+      },
+      {
+        "name": "total_revenue",
+        "type": "decimal",
+        "description": "Total revenue for the quarter"
+      },
+      {
+        "name": "net_profit",
+        "type": "decimal",
+        "description": "Net profit for the quarter"
+      }
+    ]
+  }
+  

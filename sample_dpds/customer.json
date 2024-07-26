@@ -1,0 +1,32 @@
+{
+    "name": "Customer Information",
+    "description": "Details about customers including their demographics and account information.",
+    "columns": [
+      {
+        "name": "customer_id",
+        "type": "integer",
+        "description": "Unique identifier for each customer"
+      },
+      {
+        "name": "first_name",
+        "type": "string",
+        "description": "First name of the customer"
+      },
+      {
+        "name": "last_name",
+        "type": "string",
+        "description": "Last name of the customer"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "description": "Email address of the customer"
+      },
+      {
+        "name": "date_of_birth",
+        "type": "date",
+        "description": "Date of birth of the customer"
+      }
+    ]
+  }
+  

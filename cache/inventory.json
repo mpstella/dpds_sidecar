@@ -1,0 +1,27 @@
+{
+    "name": "Inventory Levels",
+    "description": "Current inventory levels of products in the warehouse.",
+    "columns": [
+      {
+        "name": "product_id",
+        "type": "integer",
+        "description": "Unique identifier for each product"
+      },
+      {
+        "name": "warehouse_id",
+        "type": "integer",
+        "description": "Unique identifier for the warehouse"
+      },
+      {
+        "name": "stock_quantity",
+        "type": "integer",
+        "description": "Current quantity of the product in stock"
+      },
+      {
+        "name": "reorder_level",
+        "type": "integer",
+        "description": "Quantity at which the product should be reordered"
+      }
+    ]
+  }
+  

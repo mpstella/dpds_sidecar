@@ -1,0 +1,32 @@
+{
+    "name": "Website Traffic",
+    "description": "Details of traffic on the company's website.",
+    "columns": [
+      {
+        "name": "session_id",
+        "type": "string",
+        "description": "Unique identifier for each session"
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "description": "Unique identifier for the user"
+      },
+      {
+        "name": "visit_date",
+        "type": "datetime",
+        "description": "Date and time of the visit"
+      },
+      {
+        "name": "page_url",
+        "type": "string",
+        "description": "URL of the page visited"
+      },
+      {
+        "name": "duration_seconds",
+        "type": "integer",
+        "description": "Duration of the visit in seconds"
+      }
+    ]
+  }
+  

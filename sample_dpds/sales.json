@@ -1,0 +1,32 @@
+{
+    "name": "Sales Transactions",
+    "description": "Records of sales transactions in the store.",
+    "columns": [
+      {
+        "name": "transaction_id",
+        "type": "integer",
+        "description": "Unique identifier for each transaction"
+      },
+      {
+        "name": "customer_id",
+        "type": "integer",
+        "description": "Unique identifier for the customer involved in the transaction"
+      },
+      {
+        "name": "transaction_date",
+        "type": "datetime",
+        "description": "Date and time of the transaction"
+      },
+      {
+        "name": "amount",
+        "type": "decimal",
+        "description": "Total amount of the transaction"
+      },
+      {
+        "name": "payment_method",
+        "type": "string",
+        "description": "Payment method used for the transaction"
+      }
+    ]
+  }
+  

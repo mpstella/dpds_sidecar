@@ -1,0 +1,32 @@
+{
+    "name": "Product Catalog",
+    "description": "List of products available in the store.",
+    "columns": [
+      {
+        "name": "product_id",
+        "type": "integer",
+        "description": "Unique identifier for each product"
+      },
+      {
+        "name": "product_name",
+        "type": "string",
+        "description": "Name of the product"
+      },
+      {
+        "name": "category",
+        "type": "string",
+        "description": "Category to which the product belongs"
+      },
+      {
+        "name": "price",
+        "type": "decimal",
+        "description": "Price of the product"
+      },
+      {
+        "name": "stock_quantity",
+        "type": "integer",
+        "description": "Quantity of the product in stock"
+      }
+    ]
+  }
+  

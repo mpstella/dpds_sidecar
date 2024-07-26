@@ -1,0 +1,32 @@
+{
+    "name": "Employee Records",
+    "description": "Information about employees working in the company.",
+    "columns": [
+      {
+        "name": "employee_id",
+        "type": "integer",
+        "description": "Unique identifier for each employee"
+      },
+      {
+        "name": "first_name",
+        "type": "string",
+        "description": "First name of the employee"
+      },
+      {
+        "name": "last_name",
+        "type": "string",
+        "description": "Last name of the employee"
+      },
+      {
+        "name": "department",
+        "type": "string",
+        "description": "Department in which the employee works"
+      },
+      {
+        "name": "hire_date",
+        "type": "date",
+        "description": "Date when the employee was hired"
+      }
+    ]
+  }
+  

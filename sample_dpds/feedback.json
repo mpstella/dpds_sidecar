@@ -1,0 +1,32 @@
+{
+    "name": "Customer Feedback",
+    "description": "Feedback received from customers regarding products and services.",
+    "columns": [
+      {
+        "name": "feedback_id",
+        "type": "integer",
+        "description": "Unique identifier for each feedback entry"
+      },
+      {
+        "name": "customer_id",
+        "type": "integer",
+        "description": "Unique identifier for the customer providing the feedback"
+      },
+      {
+        "name": "feedback_date",
+        "type": "datetime",
+        "description": "Date and time the feedback was provided"
+      },
+      {
+        "name": "rating",
+        "type": "integer",
+        "description": "Rating provided by the customer (1-5)"
+      },
+      {
+        "name": "comments",
+        "type": "string",
+        "description": "Additional comments provided by the customer"
+      }
+    ]
+  }
+  
