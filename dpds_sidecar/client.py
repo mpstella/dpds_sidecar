@@ -1,9 +1,9 @@
 import sys
 import rpyc
 
-def run(fqn: str) -> None:
+def run(port: int, fqn: str) -> None:
     
-    conn = rpyc.connect("localhost", 12345)
+    conn = rpyc.connect("localhost", port)
 
     f = conn.root.get(fqn)
     print(f)
@@ -12,8 +12,8 @@ def run(fqn: str) -> None:
 
 if __name__ == "__main__":
 
-    if len(sys.argv) == 1:
-        print("Usage: python client.py <fqn>")
+    if len(sys.argv) != 3:
+        print("Usage: python client.py <port> <fqn>")
         sys.exit(1)
 
-    run(sys.argv[1])
+    run(sys.argv[1], sys.argv[2])

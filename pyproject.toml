@@ -8,10 +8,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 rpyc = "^6.0.0"
-typer = "^0.12.3"
+typer-slim = {extras = ["standard"], version = "^0.12.3"}
 
 [tool.poetry.scripts]
-start = "dpds_sidecar.cache:app"
+server = "dpds_sidecar.cache:app"
 
 [build-system]
 requires = ["poetry-core"]
