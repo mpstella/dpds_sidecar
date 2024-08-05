@@ -72,6 +72,8 @@ class TestObject2:
 
 class DpdsService(rpyc.Service):
 
+    ALIASES = ["dpds_retrieval"]
+
     def __init__(self, source):
         self.source = Path(source)
 
@@ -86,7 +88,10 @@ class DpdsService(rpyc.Service):
                 return file.read()
         
         print("Not found, fetching from DPC API ...")
-        return {"path": "__NOT__FOUND__"}
+        # add code here to fetch from DPDS
+
+        raise FileNotFoundError
+
     
     def exposed_get_obj(self) -> TestObject:
         return TestObject("abc_fqn", ["port1", "port2"])
@@ -119,7 +124,10 @@ def start(
     if not p.exists():
         p.mkdir(parents=True, exist_ok=True)
 
-    server = CustomThreadedService(DpdsService, port=port, source=destination, protocol_config={'allow_public_attrs': True})
+    server = CustomThreadedService(DpdsService, 
+                                   port=port, 
+                                   source=destination, 
+                                   protocol_config={'allow_public_attrs': True})
     sync = GcsRsyncWorker(source, destination, server, sleep_time)
 
     print(">> Starting GCS Sync Service ... <<")
