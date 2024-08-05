@@ -1,9 +1,10 @@
+from dataclasses import dataclass, field
 import subprocess
 from pathlib import Path
 
 import threading
 import time
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 import typer
 import rpyc
@@ -58,6 +59,16 @@ class GcsRsyncWorker(threading.Thread):
             
             time.sleep(self.sleep_time)
 
+@dataclass
+class TestObject:
+    fqn: str
+    ports: List[str] = field(default_factory=list)
+
+
+class TestObject2:
+
+    def greeting(self) -> str:
+        return f"Hello from {self}"
 
 class DpdsService(rpyc.Service):
 
@@ -76,6 +87,12 @@ class DpdsService(rpyc.Service):
         
         print("Not found, fetching from DPC API ...")
         return {"path": "__NOT__FOUND__"}
+    
+    def exposed_get_obj(self) -> TestObject:
+        return TestObject("abc_fqn", ["port1", "port2"])
+    
+    def exposed_get_obj2(self) -> TestObject2:
+        return TestObject2()
     
 class CustomThreadedService(ThreadedServer):
     def __init__(self, service, port, source, **kwargs):
@@ -102,7 +119,7 @@ def start(
     if not p.exists():
         p.mkdir(parents=True, exist_ok=True)
 
-    server = CustomThreadedService(DpdsService, port=port, source=destination)
+    server = CustomThreadedService(DpdsService, port=port, source=destination, protocol_config={'allow_public_attrs': True})
     sync = GcsRsyncWorker(source, destination, server, sleep_time)
 
     print(">> Starting GCS Sync Service ... <<")
